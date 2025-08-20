@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CGPA.Light" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/cgpa_primary</item>
+        <item name="colorPrimaryDark">@color/cgpa_primary_dark</item>
+        <item name="colorAccent">@color/cgpa_accent</item>
+        <item name="android:statusBarColor">@color/cgpa_primary_dark</item>
+        <item name="android:navigationBarColor">@color/cgpa_background</item>
+    </style>
+</resources>

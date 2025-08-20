@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette -->
+    <color name="cgpa_primary">#1976D2</color>
+    <color name="cgpa_primary_dark">#1565C0</color>
+    <color name="cgpa_accent">#FFC107</color>
+    <color name="cgpa_secondary">#424242</color>
+    <color name="cgpa_secondary_dark">#333333</color>
+
+    <!-- Surfaces -->
+    <color name="cgpa_background">#FAFAFA</color>
+    <color name="cgpa_surface">#FFFFFF</color>
+    <color name="cgpa_onBackground">#212121</color>
+    <color name="cgpa_hint">#9E9E9E</color>
+
+    <!-- Shadows/borders -->
+    <color name="cgpa_card_stroke">#11000000</color>
+</resources>

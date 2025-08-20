@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cgpa_background"
+    android:padding="16dp"
+    tools:context="org.example.app.MainActivity">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:textColor="@color/cgpa_onBackground"
+        android:textSize="20sp"
+        android:paddingBottom="12dp"/>
+
+    <!-- Card: Input Form -->
+    <LinearLayout
+        android:id="@+id/card_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Subject"
+            android:textStyle="bold"
+            android:textColor="@color/cgpa_primary"
+            android:textSize="16sp"
+            android:paddingBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/input_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Subject name"
+                android:imeOptions="actionNext"
+                android:singleLine="true"
+                android:background="@drawable/bg_field"
+                android:padding="10dp"
+                android:textColor="@color/cgpa_onBackground"
+                android:textColorHint="@color/cgpa_hint"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <Spinner
+                    android:id="@+id/spinner_grade"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_field"/>
+
+                <EditText
+                    android:id="@+id/input_credit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    android:hint="Credit"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:background="@drawable/bg_field"
+                    android:padding="10dp"
+                    android:textColor="@color/cgpa_onBackground"
+                    android:textColorHint="@color/cgpa_hint"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Subject"
+                android:textAllCaps="false"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/cgpa_primary"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Card: Summary -->
+    <LinearLayout
+        android:id="@+id/card_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Summary"
+            android:textStyle="bold"
+            android:textColor="@color/cgpa_secondary"
+            android:textSize="16sp"
+            android:paddingBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/text_cgpa_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CGPA:"
+                android:textColor="@color/cgpa_onBackground"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/text_cgpa_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/cgpa_accent"/>
+
+            <TextView
+                android:id="@+id/text_total_credits_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    Total Credits:"
+                android:textColor="@color/cgpa_onBackground"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"/>
+
+            <TextView
+                android:id="@+id/text_total_credits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/cgpa_onBackground"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_save_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save to History"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/cgpa_secondary_dark"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!-- List of Subjects -->
+    <TextView
+        android:id="@+id/subjects_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subjects"
+        android:textStyle="bold"
+        android:textColor="@color/cgpa_onBackground"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        android:paddingBottom="6dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_subjects"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_card"
+        android:padding="4dp"/>
+
+    <!-- History -->
+    <LinearLayout
+        android:id="@+id/history_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/history_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:textStyle="bold"
+            android:textColor="@color/cgpa_onBackground"
+            android:textSize="16sp"
+            android:paddingBottom="6dp"/>
+
+        <LinearLayout
+            android:id="@+id/history_list"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>
